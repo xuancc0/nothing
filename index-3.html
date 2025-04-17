@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COINtainer 線上集點卡</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f0f8f5;
+      padding: 20px;
+      max-width: 500px;
+      margin: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #2c6e49;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      background-color: #2c6e49;
+      color: white;
+      padding: 10px;
+      border: none;
+      width: 100%;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .success {
+      display: none;
+      margin-top: 20px;
+      text-align: center;
+      color: #2c6e49;
+    }
+  </style>
+</head>
+<body>
+  <h1>COINtainer 線上集點卡</h1>
+  <form name="coin-form" method="POST" data-netlify="true" enctype="multipart/form-data">
+    <input type="hidden" name="form-name" value="coin-form">
+
+    <label for="name">姓名：</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="studentId">學號：</label>
+    <input type="text" id="studentId" name="studentId" required>
+
+    <label for="store">造訪店家：</label>
+    <select id="store" name="store" required>
+      <option value="7-Eleven">7-Eleven</option>
+      <option value="FamilyMart">FamilyMart</option>
+      <option value="Hi-Life">Hi-Life</option>
+      <option value="FIFTYLAN">FIFTYLAN</option>
+      <option value="OOLONG TEA PROJECT">OOLONG TEA PROJECT</option>
+      <option value="Ching Shin Fu Chuan">Ching Shin Fu Chuan</option>
+    </select>
+
+    <label for="code">店家驗證碼：</label>
+    <input type="text" id="code" name="code" required>
+
+    <label for="photo">上傳照片：</label>
+    <input type="file" id="photo" name="photo" accept="image/*" required>
+
+    <label for="comment">今天的心得（選填）：</label>
+    <textarea id="comment" name="comment" rows="3"></textarea>
+
+    <button type="submit">送出集點</button>
+  </form>
+
+  <div class="success" id="success">✅ 感謝你的參與！點數將於 2 日內更新</div>
+</body>
+</html>
